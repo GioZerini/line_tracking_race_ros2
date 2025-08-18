@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
             'planner_node = line_tracking_race_controller.planner_node:main',
             'control_node = line_tracking_race_controller.control_node:main',
+            'control_node_nl = line_tracking_race_controller.control_node_nl:main',
         ],
     },
 )

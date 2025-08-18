@@ -6,7 +6,7 @@ import csv
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float64, Float32
+from std_msgs.msg import Float32
 from ament_index_python.packages import get_package_share_directory
 from geometry_msgs.msg import Twist
 
@@ -18,7 +18,7 @@ TURNING_THRUST = 1  # Thrust used for turning
 WHEEL_BASE = 1.4 
 
 # Control node class used to implement a PID controller for line following
-class ControlNode(Node):
+class ControlNodeNL(Node):
     def __init__(self):
         super().__init__("control_node")
 
@@ -33,8 +33,16 @@ class ControlNode(Node):
         self.k_i = self.get_parameter("k_i").value
         self.k_d = self.get_parameter("k_d").value
 
-        # Print PID parameters to the console
-        self.get_logger().info(f"PID params: {self.k_p}, {self.k_i}, {self.k_d}")
+        # --- nuovi parametri nel __init__ ---
+        self.declare_parameter("controller_type", "atan")   # "pid" | "atan" | "tanh" | "smc"
+        self.declare_parameter("k_nl", 1.0)                # guadagno non lineare (atan/tanh)
+        self.declare_parameter("lambda_nl", 2.0)           # ripidità non linearità
+
+        self.max_duration = self.get_parameter("duration").value
+        self.controller_type = self.get_parameter("controller_type").value
+        self.k_nl     = float(self.get_parameter("k_nl").value)
+        self.lambda_nl= float(self.get_parameter("lambda_nl").value)
+
 
         # Create log files for data logging and performance evaluation
         date = datetime.today().strftime("%Y-%m-%d_%H-%M-%S")
@@ -43,9 +51,7 @@ class ControlNode(Node):
         self.open_performance_evaluation_file(date)
 
         # Initialize control variables
-        self.setpoint = 0
         self.prev_error = 0
-        self.accumulated_integral = 0
         self.thrust = 0
         self.started = False
         self.ISE = 0
@@ -55,16 +61,23 @@ class ControlNode(Node):
         # Create two publisher to control left and right wheels
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
 
-
-
         # Create a subscription to the error topic to receive error measurements and call the callback function
         self.error_sub = self.create_subscription(Float32, "/planning/error", self.handle_error_callback, 10)
 
         self.get_logger().info("Control node initialized!")
 
+        self.int_err = 0.0     # integrale per PID/SMC
+        self.int_limit = 2.0   # anti-windup (clip)
+
+    # --- funzione di supporto ---
+    def sat(self, x):
+        # boundary layer "sat", più morbida di sign(x)
+        if x > 1.0: return 1.0
+        if x < -1.0: return -1.0
+        return x
+    
     # Callback function to handle incoming error messages
     def handle_error_callback(self, msg):
-        from rclpy.time import Time
 
         # Save the error measurement and the current time
         measurement = msg.data
@@ -94,12 +107,40 @@ class ControlNode(Node):
         if dt <= 0:
             return
 
-        # PID control calculations
-        self.accumulated_integral += dt * (error + self.prev_error) / 2
-        p_term = self.k_p * error
-        i_term = self.k_i * self.accumulated_integral
-        d_term = self.k_d * (error - self.prev_error) / dt
-        control = p_term + i_term + d_term
+        # anti-windup: integra solo se non saturi troppo e dt>0
+        self.int_err += dt * (error + self.prev_error) / 2.0
+        #    clamp integrale
+        if self.int_err > self.int_limit:  self.int_err = self.int_limit
+        if self.int_err < -self.int_limit: self.int_err = -self.int_limit
+
+        # scegli il controllore
+        if self.controller_type == "pid":
+            p_term = self.k_p * error
+            i_term = self.k_i * self.int_err
+            d_term = self.k_d * (error - self.prev_error) / dt
+            control = p_term + i_term + d_term
+
+        elif self.controller_type == "atan":
+            # non linearità morbida e “limitante”
+            control = self.k_nl * ( __import__("math").atan(self.lambda_nl * error) )
+            p_term, i_term, d_term = control, 0.0, 0.0
+
+        elif self.controller_type == "tanh":
+            control = self.k_nl * ( __import__("math").tanh(self.lambda_nl * error) )
+            p_term, i_term, d_term = control, 0.0, 0.0
+
+        elif self.controller_type == "smc":
+            # sliding con integrale nel manifold
+            s = error + self.smc_c * self.int_err
+            control = - self.smc_k1 * self.sat( s / max(self.smc_phi, 1e-6) ) - self.smc_k2 * error
+            p_term, i_term, d_term = control, 0.0, 0.0
+
+        else:
+            # fallback PID
+            p_term = self.k_p * error
+            i_term = self.k_i * self.int_err
+            d_term = self.k_d * (error - self.prev_error) / dt
+            control = p_term + i_term + d_term
 
         self.prev_error = error
         self.time_prev = time_now
@@ -151,11 +192,11 @@ class ControlNode(Node):
 
     # Stop the control node, log performance indices, and close the log files
     def stop(self):
-        msg = Float64()
-        msg.data = 0
+        twist = Twist()
+        twist.linear.x = 0.0
+        twist.angular.z = 0.0
         for _ in range(10):
-            self.left_wheel_pub.publish(msg)
-            self.right_wheel_pub.publish(msg)
+            self.cmd_vel_pub.publish(twist)
 
         self.log_performance_indices(self.ISE)
         self.logfile.close()
@@ -167,7 +208,7 @@ class ControlNode(Node):
 def main(args=None):
     # Initialize the ROS 2 Python client library and create the control node
     rclpy.init(args=args)
-    node = ControlNode()
+    node = ControlNodeNL()
     try:
         # Spin the node to keep it active and processing callbacks
         rclpy.spin(node)
@@ -189,3 +230,4 @@ if __name__ == "__main__":
 # - Il comportamento PID, il calcolo dell'errore e la gestione del controllo motori restano identici.
 # - L'output viene salvato su file CSV allo stesso modo per facilitare il confronto tra versioni.
 # ================================================================================
+
