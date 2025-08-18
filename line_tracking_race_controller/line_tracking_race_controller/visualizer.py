@@ -2,8 +2,8 @@ import numpy as np
 import math
 import cv2 as cv
 
-from line_follower_pkg.error_type import ErrorType
-import line_follower_pkg.colors as colors
+from line_tracking_race_controller.error_type import ErrorType
+import line_tracking_race_controller.colors as colors
 
 # Signals that the canvas was not initialized
 class EmptyCanvasException(Exception):

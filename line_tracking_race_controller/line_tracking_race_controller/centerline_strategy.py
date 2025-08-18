@@ -3,9 +3,9 @@ import numpy as np
 import cv2 as cv
 from cv_bridge import CvBridge
 
-from line_follower_pkg.error_type import ErrorType
-from line_follower_pkg.visualizer import Visualizer
-import line_follower_pkg.colors as colors
+from line_tracking_race_controller.error_type import ErrorType
+from line_tracking_race_controller.visualizer import Visualizer
+import line_tracking_race_controller.colors as colors
 
 # In OpenCV hue ranges from 0 to 179
 MAX_HUE = 179

@@ -38,7 +38,7 @@ class ControlNode(Node):
 
         # Create log files for data logging and performance evaluation
         date = datetime.today().strftime("%Y-%m-%d_%H-%M-%S")
-        self.pkg_path = get_package_share_directory("line_follower_pkg")
+        self.pkg_path = get_package_share_directory("line_tracking_race_controller")
         self.open_logfile(date)
         self.open_performance_evaluation_file(date)
 

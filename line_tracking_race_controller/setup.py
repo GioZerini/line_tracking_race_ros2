@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'planner_node = line_follower_pkg.planner_node:main',
-            'control_node = line_follower_pkg.control_node:main',
+            'planner_node = line_tracking_race_controller.planner_node:main',
+            'control_node = line_tracking_race_controller.control_node:main',
         ],
     },
 )

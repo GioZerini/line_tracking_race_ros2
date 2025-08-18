@@ -12,9 +12,9 @@ from std_msgs.msg import Float32
 from cv_bridge import CvBridge
 
 # Import of planning strategies
-from line_follower_pkg.centroid_strategy import CentroidStrategy
-from line_follower_pkg.centerline_strategy import CenterlineStrategy
-from line_follower_pkg.error_type import ErrorType
+from line_tracking_race_controller.centroid_strategy import CentroidStrategy
+from line_tracking_race_controller.centerline_strategy import CenterlineStrategy
+from line_tracking_race_controller.error_type import ErrorType
 
 # Planner Node which extends the Node class
 class PlannerNode(Node):
