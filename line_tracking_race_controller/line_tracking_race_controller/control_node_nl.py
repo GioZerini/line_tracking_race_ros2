@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import math
 from datetime import datetime
 import csv
 
@@ -10,195 +11,298 @@ from std_msgs.msg import Float32
 from ament_index_python.packages import get_package_share_directory
 from geometry_msgs.msg import Twist
 
+# ===================== Costanti controllo =====================
+MAX_THRUST = 0.5       # [m/s] velocità lineare massima
+RAMP_UP = 0.1          # [m/s^2] incremento per secondo se manca v_ref dal planner
+WHEEL_BASE = 1.4       # [m] interasse
+OMEGA_LIMIT = 0.8      # [rad/s] limite velocità angolare per sicurezza
 
-# Control constants
-MAX_THRUST = 5     # Maximum engine thrust limit 
-RAMP_UP = 0.1       # Thrust increase per second
-TURNING_THRUST = 1  # Thrust used for turning
-WHEEL_BASE = 1.4 
+def sinc(x: float) -> float:
+    return 1.0 if abs(x) < 1e-6 else math.sin(x)/x
 
-# Control node class used to implement a PID controller for line following
-class ControlNodeNL(Node):
+
+class ControlNodeNl(Node):
     def __init__(self):
         super().__init__("control_node")
 
-        # Parameter declarations configurable via launch file
+        # ---------------- Parametri comuni ----------------
         self.declare_parameter("duration", -1)
+        self.declare_parameter("controller_type", "pid")  # "pid" | "nlpf"
+
+        # PID
         self.declare_parameter("k_p", 1.0)
         self.declare_parameter("k_i", 0.2)
         self.declare_parameter("k_d", 0.2)
 
-        self.max_duration = self.get_parameter("duration").value
-        self.k_p = self.get_parameter("k_p").value
-        self.k_i = self.get_parameter("k_i").value
-        self.k_d = self.get_parameter("k_d").value
+        # Non lineare (README)
+        self.declare_parameter("k_psi", 2.0)
+        self.declare_parameter("eps_div", 1e-3)          # protezione (1 - d*gamma)
+        self.declare_parameter("use_planner_speed", True) # usa /planner/speed_cmd se disponibile
 
-        # --- nuovi parametri nel __init__ ---
-        self.declare_parameter("controller_type", "atan")   # "pid" | "atan" | "tanh" | "smc"
-        self.declare_parameter("k_nl", 1.0)                # guadagno non lineare (atan/tanh)
-        self.declare_parameter("lambda_nl", 2.0)           # ripidità non linearità
-
-        self.max_duration = self.get_parameter("duration").value
+        self.max_duration = float(self.get_parameter("duration").value)
         self.controller_type = self.get_parameter("controller_type").value
-        self.k_nl     = float(self.get_parameter("k_nl").value)
-        self.lambda_nl= float(self.get_parameter("lambda_nl").value)
 
+        self.k_p = float(self.get_parameter("k_p").value)
+        self.k_i = float(self.get_parameter("k_i").value)
+        self.k_d = float(self.get_parameter("k_d").value)
 
-        # Create log files for data logging and performance evaluation
+        self.k_psi = float(self.get_parameter("k_psi").value)
+        self.eps_div = float(self.get_parameter("eps_div").value)
+        self.use_planner_speed = bool(self.get_parameter("use_planner_speed").value)
+
+        self.get_logger().info(
+            f"Controller: {self.controller_type} | PID=({self.k_p},{self.k_i},{self.k_d}) | "
+            f"NL(k_psi={self.k_psi})"
+        )
+
+        # ---------------- Log ----------------
         date = datetime.today().strftime("%Y-%m-%d_%H-%M-%S")
         self.pkg_path = get_package_share_directory("line_tracking_race_controller")
-        self.open_logfile(date)
-        self.open_performance_evaluation_file(date)
+        self._open_logs(date)
 
-        # Initialize control variables
-        self.prev_error = 0
-        self.thrust = 0
+        # ---------------- Stato ----------------
         self.started = False
-        self.ISE = 0
         self.time_start = None
         self.time_prev = None
+        self.ISE = 0.0
 
-        # Create two publisher to control left and right wheels
+        # PID
+        self.prev_error = 0.0
+        self.accumulated_integral = 0.0
+        self.int_limit = 2.0
+
+        # Comando velocità
+        self.v_ramp = 0.0         # rampa locale
+        self.v_ref = None         # da /planner/speed_cmd
+
+        # Feature NL frenet (da /vision/*)
+        self.d = 0.0
+        self.psi = 0.0
+        self.gamma = 0.0
+        self.have_d = False
+        self.have_psi = False
+        self.have_gamma = False
+
+        # ---------------- Publisher ----------------
         self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
 
-        # Create a subscription to the error topic to receive error measurements and call the callback function
-        self.error_sub = self.create_subscription(Float32, "/planning/error", self.handle_error_callback, 10)
+        # ---------------- Subscribers ----------------
+        # Trigger principale: resta /planning/error (compatibilità).
+        # Se controller_type="nlpf", usiamo d/psi/gamma aggiornati in questo callback.
+        self.error_sub = self.create_subscription(Float32, "/planning/error",
+                                                  self.handle_error_callback, 10)
+        # Non lineare: segnali dalla vision
+        self.sub_d = self.create_subscription(Float32, "/vision/d", self.cb_d, 10)
+        self.sub_psi = self.create_subscription(Float32, "/vision/psi", self.cb_psi, 10)
+        self.sub_gamma = self.create_subscription(Float32, "/vision/gamma", self.cb_gamma, 10)
+        # Velocità target dal planner (opzionale)
+        self.sub_speed = self.create_subscription(Float32, "/planner/speed_cmd", self.cb_speed, 10)
 
         self.get_logger().info("Control node initialized!")
 
-        self.int_err = 0.0     # integrale per PID/SMC
-        self.int_limit = 2.0   # anti-windup (clip)
-
-    # --- funzione di supporto ---
-    def sat(self, x):
-        # boundary layer "sat", più morbida di sign(x)
-        if x > 1.0: return 1.0
-        if x < -1.0: return -1.0
-        return x
     
-    # Callback function to handle incoming error messages
-    def handle_error_callback(self, msg):
+    def cb_d(self, msg: Float32):
+        self.d = float(msg.data); self.have_d = True
 
-        # Save the error measurement and the current time
-        measurement = msg.data
+    def cb_psi(self, msg: Float32):
+        self.psi = float(msg.data); self.have_psi = True
+
+    def cb_gamma(self, msg: Float32):
+        self.gamma = float(msg.data); self.have_gamma = True
+
+    def cb_speed(self, msg: Float32):
+        self.v_ref = float(msg.data)
+
+    # ==================== Callback principale ====================
+    def handle_error_callback(self, msg: Float32):
+        # timestamp
         time_now = self.get_clock().now()
-
-        # If the control node has not started yet, initialize the start time and set the started flag
-        if self.started is False:
+        if not self.started:
             self.time_start = time_now
             self.time_prev = time_now
             self.started = True
             return
 
-        # Calculate elapsed time and time difference since the last measurement
         elapsed = (time_now - self.time_start).nanoseconds / 1e9
         dt = (time_now - self.time_prev).nanoseconds / 1e9
 
-        # If the maximum duration is set and elapsed time exceeds it, stop the control node
+        # durata max
         if self.max_duration >= 0 and elapsed > self.max_duration:
             self.get_logger().warn("Max duration reached.")
             self.stop()
             return
 
-        error = measurement
-        # Calculate the Integral of Squared Error (ISE) for performance evaluation
-        self.ISE += dt * (error * error + self.prev_error * self.prev_error) / 2
-
-        if dt <= 0:
+        if dt <= 0.0:
             return
 
-        # anti-windup: integra solo se non saturi troppo e dt>0
-        self.int_err += dt * (error + self.prev_error) / 2.0
-        #    clamp integrale
-        if self.int_err > self.int_limit:  self.int_err = self.int_limit
-        if self.int_err < -self.int_limit: self.int_err = -self.int_limit
+        # ---------------- Selettore controllore ----------------
+        if self.controller_type.lower() == "nlpf":
+            # Se non ho ancora tutte le feature, procedo piano e dritto (idle crawl)
+            if not (self.have_d and self.have_psi and self.have_gamma):
+                # usa la rampa locale per far "agganciare" la linea
+                self.v_ramp = min(MAX_THRUST, self.v_ramp + RAMP_UP * dt)
+                v_idle = min(0.25, self.v_ramp)  # velocità molto bassa
+                self._publish_twist(v_idle, 0.0)
+                self.time_prev = time_now
+                return
 
-        # scegli il controllore
-        if self.controller_type == "pid":
-            p_term = self.k_p * error
-            i_term = self.k_i * self.int_err
-            d_term = self.k_d * (error - self.prev_error) / dt
-            control = p_term + i_term + d_term
+            # ---- costanti di sicurezza / tuning (locali) ----
+            ALPHA       = 0.85   # filtro exp più deciso (su d, psi, gamma)
+            D_MAX       = 0.30   # [m] offset plausibile
+            PSI_MAX     = 0.90   # [rad]
+            GAMMA_MAX   = 1.20   # [1/m] clamp curvatura
+            DEN_EPS     = 0.12   # guardia su 1 - d*gamma
+            PSI_DB      = 0.08   # [rad] dead-band su psi
+            D_DB        = 0.02   # [m]   dead-band su d
+            V_MAX_NL    = 0.28   # [m/s] cappello fisso
+            A_Y_MAX     = 0.6    # [m/s^2] limite accelerazione laterale (rallenta in curva)
+            k_dv_base   = 0.45   # guadagno su d*v*sinc
+            k_g_base    = 0.00   # (riaccendilo più tardi: 0.20..0.35)
 
-        elif self.controller_type == "atan":
-            # non linearità morbida e “limitante”
-            control = self.k_nl * ( __import__("math").atan(self.lambda_nl * error) )
-            p_term, i_term, d_term = control, 0.0, 0.0
+            # ---- filtro exp su d, psi, gamma ----
+            if not hasattr(self, "_fd"):
+                self._fd, self._fpsi, self._fg = self.d, self.psi, self.gamma
+            self._fd   = (1.0 - ALPHA) * self._fd   + ALPHA * self.d
+            self._fpsi = (1.0 - ALPHA) * self._fpsi + ALPHA * self.psi
+            self._fg   = (1.0 - ALPHA) * self._fg   + ALPHA * self.gamma
 
-        elif self.controller_type == "tanh":
-            control = self.k_nl * ( __import__("math").tanh(self.lambda_nl * error) )
-            p_term, i_term, d_term = control, 0.0, 0.0
+            # ---- clamp ingressi ----
+            d     = max(-D_MAX,     min(D_MAX,     self._fd))
+            psi   = max(-PSI_MAX,   min(PSI_MAX,   self._fpsi))
+            gamma = max(-GAMMA_MAX, min(GAMMA_MAX, self._fg))
 
-        elif self.controller_type == "smc":
-            # sliding con integrale nel manifold
-            s = error + self.smc_c * self.int_err
-            control = - self.smc_k1 * self.sat( s / max(self.smc_phi, 1e-6) ) - self.smc_k2 * error
-            p_term, i_term, d_term = control, 0.0, 0.0
+            # ---- dead-band morbido: annulla micro-correzzioni che innescano zig-zag ----
+            if abs(psi) < PSI_DB: psi = 0.0
+            if abs(d)   < D_DB:   d   = 0.0
 
-        else:
-            # fallback PID
-            p_term = self.k_p * error
-            i_term = self.k_i * self.int_err
-            d_term = self.k_d * (error - self.prev_error) / dt
-            control = p_term + i_term + d_term
+            # ---- velocità v (lenta, con cappello e rallentamento in curva) ----
+            if self.use_planner_speed and self.v_ref is not None:
+                v = float(self.v_ref)
+            else:
+                self.v_ramp = min(MAX_THRUST, self.v_ramp + RAMP_UP * dt)
+                v = self.v_ramp
+            # cappello di avvio
+            if elapsed < 2.0:
+                v = min(v, 0.22)
+            # limite in funzione della curvatura: a_y = v^2 * |gamma| <= A_Y_MAX
+            v_curve = (V_MAX_NL if abs(gamma) < 1e-6 else min(V_MAX_NL, (A_Y_MAX / abs(gamma)) ** 0.5))
+            v = min(v, V_MAX_NL, v_curve)
+
+            # ---- denominatore robusto ----
+            den = 1.0 - d * gamma
+            if abs(den) < DEN_EPS:
+                den = DEN_EPS if den >= 0.0 else -DEN_EPS
+
+            # ---- gain scheduling: quando |psi| è grande, attenua d e gamma ----
+            psi_w = 1.0 / (1.0 + 2.0 * abs(psi))
+            k_dv  = k_dv_base * psi_w
+            k_g   = k_g_base  * psi_w
+
+            # ---- legge non lineare ----
+            omega_raw = (- self.k_psi * psi
+                        - k_dv * d * v * sinc(psi)
+                        + k_g  * v * (math.cos(psi) * gamma) / den)
+
+            # ---- NaN guard ----
+            if not math.isfinite(omega_raw):
+                omega_raw = 0.0
+
+            # ---- low-pass + rate limiter su omega ----
+            BETA_OMEGA = 0.30      # low-pass del comando (0..1)
+            OMEGA_SLEW = 1.0       # [rad/s^2] max variazione per secondo
+            if not hasattr(self, "_omega_prev"):
+                self._omega_prev = 0.0
+            omega_lp = (1.0 - BETA_OMEGA) * self._omega_prev + BETA_OMEGA * omega_raw
+            domega_max = OMEGA_SLEW * max(dt, 1e-3)
+            omega = max(self._omega_prev - domega_max, min(self._omega_prev + domega_max, omega_lp))
+
+            # ---- saturazione (mantieni eventuale inversione di verso se l’avevi messa) ----
+            omega = max(-OMEGA_LIMIT, min(OMEGA_LIMIT, omega))
+            omega = -omega  # SOLO se in sim il verso è invertito
+
+            # ---- logging/ISE e publish ----
+            error = float(d)
+            self.ISE += dt * (error * error + self.prev_error * self.prev_error) / 2.0
+            self.prev_error = error
+            self.time_prev = time_now
+
+            self._publish_twist(v, omega)
+            self._omega_prev = omega
+            self._log_data(elapsed, dt, error, omega, v, 0.0, 0.0, 0.0, 0.0)
+            return
+    
+        # ---------------- PID (comportamento esistente) ----------------
+        measurement = float(msg.data)
+        error = measurement
+
+        # ISE
+        self.ISE += dt * (error*error + self.prev_error*self.prev_error) / 2.0
+
+        # PID
+        self.accumulated_integral += dt * (error + self.prev_error) / 2.0
+        # anti-windup
+        self.accumulated_integral = max(-self.int_limit, min(self.int_limit, self.accumulated_integral))
+
+        p_term = self.k_p * error
+        i_term = self.k_i * self.accumulated_integral
+        d_term = self.k_d * (error - self.prev_error) / dt
+        control = p_term + i_term + d_term
 
         self.prev_error = error
         self.time_prev = time_now
 
-        # Thrust control logic
-        if self.thrust < MAX_THRUST:
-            self.thrust += RAMP_UP
+        # v (rampa) + mappa 'control' su omega
+        v = self.v_ref if (self.use_planner_speed and self.v_ref is not None) else None
+        if v is None:
+            self.v_ramp = min(MAX_THRUST, self.v_ramp + RAMP_UP * dt)
+            v = self.v_ramp
 
-        # Calculate the left and right wheel velocities based on the control signal
-        v_l = self.thrust + TURNING_THRUST * control
-        v_r = self.thrust - TURNING_THRUST * control
+        omega = max(-OMEGA_LIMIT, min(OMEGA_LIMIT, control))
 
-        # Save the data and publish the wheel control commands
-        self.log_data(elapsed, dt, error, control, v_l, v_r, p_term, i_term, d_term)
-        self.publish_wheel_control(v_l, v_r)
+        self._publish_twist(v, omega)
+        self._log_data(elapsed, dt, error, omega, v, 0.0, p_term, i_term, d_term)
 
-    # Publish the calculated wheel velocities to the respective topics
-    def publish_wheel_control(self, v_l, v_r):
+    # ==================== Pubblicazione Twist ====================
+    def _publish_twist(self, v: float, omega: float):
+        # Pubblica cmd_vel direttamente (cinematica differenziale gestita a valle)
         msg = Twist()
-        # Calcola velocità lineare e angolare da v_l e v_r
-        linear_vel = (v_l + v_r) / 2.0
-        angular_vel = (v_r - v_l) / WHEEL_BASE  # WHEEL_BASE da definire in metri
-
-        msg.linear.x = linear_vel
-        msg.angular.z = angular_vel
+        msg.linear.x = float(v)
+        msg.angular.z = float(omega)
         self.cmd_vel_pub.publish(msg)
 
+    # ==================== Log & Stop ====================
+    def _open_logs(self, date: str):
+        logs_dir = os.path.join(self.pkg_path, "logs")
+        eval_dir = os.path.join(self.pkg_path, "logs", "evaluations")
+        os.makedirs(logs_dir, exist_ok=True)
+        os.makedirs(eval_dir, exist_ok=True)
 
-    # Open a log file for data logging with the current PID parameters
-    def open_logfile(self, date):
-        pid_params = f"{self.k_p}-{self.k_i}-{self.k_d}".replace(".", ",")
-        filepath = os.path.join(self.pkg_path, "logs", f"pid_log_{date}_[{pid_params}].csv")
-        self.logfile = open(filepath, "w+")
+        tag = self.controller_type
+        filepath = os.path.join(logs_dir, f"log_{date}_[{tag}].csv")
+        self.logfile = open(filepath, "w+", newline="")
         self.log_writer = csv.writer(self.logfile)
-        self.log_writer.writerow(["Time", "dt", "Error", "CV", "LWheel", "RWheel", "P", "I", "D"])
+        self.log_writer.writerow(["Time", "dt", "Error", "Omega", "V", "Dummy", "P", "I", "D"])
 
-    def open_performance_evaluation_file(self, date):
-        pid_params = f"{self.k_p}-{self.k_i}-{self.k_d}".replace(".", ",")
-        filepath = os.path.join(self.pkg_path, "logs", "evaluations", f"evaluation_{date}_[{pid_params}].csv")
-        self.evaluation_file = open(filepath, "w+")
+        evalpath = os.path.join(eval_dir, f"evaluation_{date}_[{tag}].csv")
+        self.evaluation_file = open(evalpath, "w+", newline="")
         self.performance_index_writer = csv.writer(self.evaluation_file)
         self.performance_index_writer.writerow(["ISE"])
 
-    def log_data(self, elapsed, dt, error, control, v_l, v_r, p_term, i_term, d_term):
-        self.log_writer.writerow([elapsed, dt, error, control, v_l, v_r, p_term, i_term, d_term])
+    def _log_data(self, elapsed, dt, error, omega, v, dummy, p_term, i_term, d_term):
+        self.log_writer.writerow([elapsed, dt, error, omega, v, dummy, p_term, i_term, d_term])
 
-    def log_performance_indices(self, ISE):
-        self.performance_index_writer.writerow([ISE])
+    def _log_performance_indices(self):
+        self.performance_index_writer.writerow([self.ISE])
 
-    # Stop the control node, log performance indices, and close the log files
     def stop(self):
+        # ferma il robot e chiudi i log
         twist = Twist()
         twist.linear.x = 0.0
         twist.angular.z = 0.0
         for _ in range(10):
             self.cmd_vel_pub.publish(twist)
 
-        self.log_performance_indices(self.ISE)
+        self._log_performance_indices()
         self.logfile.close()
         self.evaluation_file.close()
         self.get_logger().info("Control node shutting down.")
@@ -206,28 +310,13 @@ class ControlNodeNL(Node):
 
 
 def main(args=None):
-    # Initialize the ROS 2 Python client library and create the control node
     rclpy.init(args=args)
-    node = ControlNodeNL()
+    node = ControlNodeNl()
     try:
-        # Spin the node to keep it active and processing callbacks
         rclpy.spin(node)
-    # Handle keyboard interrupts gracefully to stop the node
     except KeyboardInterrupt:
         node.stop()
 
 
 if __name__ == "__main__":
     main()
-
-
-# ======================== DIFFERENZE CON VERSIONE ROS1 =========================
-# - La struttura e la logica sono rimaste pressoché invariate, ma con adattamenti a ROS 2:
-#   - In ROS2 si usa `rclpy` invece di `rospy`, e la classe `Node` è usata per tutti i nodi.
-#   - Parametri come k_p, k_i, k_d sono gestiti con `declare_parameter` e `get_parameter`.
-#   - Il logging, la gestione del tempo e dei publisher/subscriber è ora asincrona e più modulare.
-#   - La funzione `spin()` tiene il nodo attivo; lo shutdown si fa esplicitamente con `rclpy.shutdown()`.
-# - Il comportamento PID, il calcolo dell'errore e la gestione del controllo motori restano identici.
-# - L'output viene salvato su file CSV allo stesso modo per facilitare il confronto tra versioni.
-# ================================================================================
-
