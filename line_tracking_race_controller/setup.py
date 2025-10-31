@@ -23,10 +23,6 @@ setup(
             'planner_node = line_tracking_race_controller.planner_node:main',
             'control_node = line_tracking_race_controller.control_node:main',
             'control_node_nl = line_tracking_race_controller.control_node_nl:main',
-            'planner_node_nl = line_tracking_race_controller.planner_node_nl:main',
-            'visualizer = line_tracking_race_controller.visualizer:main',
-            'control_node_sel = line_tracking_race_controller.control_node_sel:main',
-            'planner_node_sel = line_tracking_race_controller.planner_node_sel:main',
         ],
     },
 )
