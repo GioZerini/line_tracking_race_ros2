@@ -1,0 +1,297 @@
+[0.061s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo': AMENT_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models /usr/bin/cmake /home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_gazebo -DCMAKE_INSTALL_PREFIX=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo
+[0.360s] -- The C compiler identification is GNU 11.4.0
+[0.740s] -- The CXX compiler identification is GNU 11.4.0
+[0.834s] -- Detecting C compiler ABI info
+[1.248s] -- Detecting C compiler ABI info - done
+[1.257s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.258s] -- Detecting C compile features
+[1.259s] -- Detecting C compile features - done
+[1.267s] -- Detecting CXX compiler ABI info
+[1.499s] -- Detecting CXX compiler ABI info - done
+[1.500s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.500s] -- Detecting CXX compile features
+[1.500s] -- Detecting CXX compile features - done
+[1.500s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.898s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.085s] -- Found line_tracking_race_description: 0.1.0 (/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/cmake)
+[2.188s] -- Looking for gz-plugin2 -- found version 2.0.4
+[2.197s] -- Searching for dependencies of gz-plugin2
+[2.208s] -- Looking for gz-utils2 -- found version 2.2.1
+[2.208s] -- Searching for dependencies of gz-utils2
+[2.217s] -- Searching for <gz-utils2> component [cli]
+[2.230s] -- Looking for gz-utils2-cli -- found version 2.2.1
+[2.231s] -- Searching for dependencies of gz-utils2-cli
+[2.238s] -- Searching for <gz-plugin2> component [register]
+[2.250s] -- Looking for gz-plugin2-register -- found version 2.0.4
+[2.253s] -- Searching for dependencies of gz-plugin2-register
+[2.319s] -- Looking for gz-common5 -- found version 5.7.1
+[2.334s] -- Searching for dependencies of gz-common5
+[2.383s] -- Looking for gz-utils2 -- found version 2.2.1
+[2.413s] -- Looking for dlfcn.h - found
+[2.508s] -- Looking for libdl - found
+[2.512s] -- Found DL: TRUE  
+[2.557s] -- Checking for module 'uuid'
+[2.728s] --   Found uuid, version 2.37.2
+[2.945s] -- Found UUID: TRUE  
+[2.955s] -- Searching for <gz-common5> component [profiler]
+[2.960s] -- Looking for gz-common5-profiler -- found version 5.7.1
+[2.970s] -- Searching for dependencies of gz-common5-profiler
+[3.162s] -- Looking for gz-sim8 -- found version 8.9.0
+[3.163s] -- Searching for dependencies of gz-sim8
+[3.219s] -- Looking for sdformat14 -- found version 14.8.0
+[3.223s] -- Searching for dependencies of sdformat14
+[3.265s] -- Checking for module 'tinyxml2'
+[3.451s] --   Found tinyxml2, version 9.0.0
+[3.900s] -- Looking for gz-math7 -- found version 7.5.1
+[3.900s] -- Searching for dependencies of gz-math7
+[3.901s] -- Looking for gz-utils2 -- found version 2.2.1
+[3.952s] -- Looking for gz-utils2 -- found version 2.2.1
+[3.966s] -- Looking for gz-plugin2 -- found version 2.0.4
+[3.970s] -- Searching for dependencies of gz-plugin2
+[3.972s] -- Looking for gz-utils2 -- found version 2.2.1
+[3.973s] -- Searching for <gz-plugin2> component [loader]
+[3.990s] -- Looking for gz-plugin2-loader -- found version 2.0.4
+[3.991s] -- Searching for dependencies of gz-plugin2-loader
+[3.993s] -- Searching for <gz-plugin2> component [register]
+[4.081s] -- Looking for gz-transport13 -- found version 13.4.1
+[4.099s] -- Searching for dependencies of gz-transport13
+[5.700s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[5.758s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[5.779s] -- Checking for module 'libzmq >= 4'
+[6.052s] --   Found libzmq , version 4.3.4
+[6.361s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[6.384s] -- Looking for gz-utils2 -- found version 2.2.1
+[6.398s] -- Looking for gz-msgs10 -- found version 10.3.2
+[6.400s] -- Searching for dependencies of gz-msgs10
+[6.463s] -- Looking for gz-utils2 -- found version 2.2.1
+[6.464s] -- Looking for gz-math7 -- found version 7.5.1
+[6.523s] -- Searching for <gz-transport13> component [log]
+[6.532s] -- Looking for gz-transport13-log -- found version 13.4.1
+[6.534s] -- Searching for dependencies of gz-transport13-log
+[6.538s] -- Searching for <gz-transport13> component [parameters]
+[6.547s] -- Looking for gz-transport13-parameters -- found version 13.4.1
+[6.553s] -- Searching for dependencies of gz-transport13-parameters
+[6.553s] -- Looking for gz-msgs10 -- found version 10.3.2
+[6.553s] -- Looking for gz-common5 -- found version 5.7.1
+[6.554s] -- Searching for dependencies of gz-common5
+[6.555s] -- Looking for gz-utils2 -- found version 2.2.1
+[6.556s] -- Looking for dlfcn.h - found
+[6.556s] -- Looking for libdl - found
+[6.588s] -- Searching for <gz-common5> component [av]
+[6.597s] -- Looking for gz-common5-av -- found version 5.7.1
+[6.598s] -- Searching for dependencies of gz-common5-av
+[6.619s] -- Checking for module 'libswscale'
+[6.668s] --   Found libswscale, version 5.9.100
+[6.798s] -- Found SWSCALE: TRUE  
+[6.811s] -- Checking for module 'libavdevice >= 56.4.100'
+[6.858s] --   Found libavdevice , version 58.13.100
+[6.978s] -- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+[7.002s] -- Checking for module 'libavformat'
+[7.027s] --   Found libavformat, version 58.76.100
+[7.129s] -- Found AVFORMAT: TRUE  
+[7.141s] -- Checking for module 'libavcodec'
+[7.180s] --   Found libavcodec, version 58.134.100
+[7.474s] -- Found AVCODEC: TRUE  
+[7.532s] -- Checking for module 'libavutil'
+[7.593s] --   Found libavutil, version 56.70.100
+[7.740s] -- Found AVUTIL: TRUE  
+[7.745s] -- Searching for <gz-common5> component [events]
+[7.759s] -- Looking for gz-common5-events -- found version 5.7.1
+[7.759s] -- Searching for dependencies of gz-common5-events
+[7.759s] -- Looking for gz-math7 -- found version 7.5.1
+[7.770s] -- Searching for <gz-common5> component [graphics]
+[7.777s] -- Looking for gz-common5-graphics -- found version 5.7.1
+[7.777s] -- Searching for dependencies of gz-common5-graphics
+[7.778s] -- Looking for gz-math7 -- found version 7.5.1
+[7.804s] -- Found GzAssimp: TRUE (found version "5.2.0") 
+[7.808s] -- Searching for <gz-common5> component [io]
+[7.819s] -- Looking for gz-common5-io -- found version 5.7.1
+[7.819s] -- Searching for dependencies of gz-common5-io
+[7.823s] -- Searching for <gz-common5> component [profiler]
+[7.837s] -- Looking for gz-fuel_tools9 -- found version 9.1.1
+[7.838s] -- Searching for dependencies of gz-fuel_tools9
+[8.074s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[8.105s] -- Checking for module 'jsoncpp'
+[8.145s] --   Found jsoncpp, version 1.9.5
+[8.243s] -- Found JSONCPP: TRUE  
+[8.445s] -- Checking for module 'libzip'
+[8.594s] --   Found libzip, version 1.7.3
+[8.861s] -- Found ZIP: TRUE  
+[8.865s] -- Looking for gz-utils2 -- found version 2.2.1
+[8.867s] -- Looking for gz-common5 -- found version 5.7.1
+[8.869s] -- Searching for dependencies of gz-common5
+[8.870s] -- Looking for gz-utils2 -- found version 2.2.1
+[8.870s] -- Looking for dlfcn.h - found
+[8.880s] -- Looking for libdl - found
+[8.907s] -- Searching for <gz-common5> component [testing]
+[8.937s] -- Looking for gz-common5-testing -- found version 5.7.1
+[8.937s] -- Searching for dependencies of gz-common5-testing
+[8.956s] -- Looking for gz-math7 -- found version 7.5.1
+[8.957s] -- Looking for gz-msgs10 -- found version 10.3.2
+[8.977s] -- Looking for gz-gui8 -- found version 8.4.0
+[8.980s] -- Searching for dependencies of gz-gui8
+[9.040s] -- Looking for gz-utils2 -- found version 2.2.1
+[9.041s] -- Looking for gz-math7 -- found version 7.5.1
+[9.048s] -- Looking for gz-common5 -- found version 5.7.1
+[9.048s] -- Looking for gz-plugin2 -- found version 2.0.4
+[9.048s] -- Looking for gz-transport13 -- found version 13.4.1
+[9.060s] -- Looking for gz-rendering8 -- found version 8.2.2
+[9.062s] -- Searching for dependencies of gz-rendering8
+[9.063s] -- Looking for gz-math7 -- found version 7.5.1
+[9.066s] -- Searching for dependencies of gz-math7
+[9.071s] -- Looking for gz-utils2 -- found version 2.2.1
+[9.072s] -- Searching for <gz-math7> component [eigen3]
+[9.075s] -- Looking for gz-math7-eigen3 -- found version 7.5.1
+[9.076s] -- Searching for dependencies of gz-math7-eigen3
+[9.104s] -- Looking for gz-common5 -- found version 5.7.1
+[9.114s] -- Searching for dependencies of gz-common5
+[9.129s] -- Looking for gz-utils2 -- found version 2.2.1
+[9.129s] -- Looking for dlfcn.h - found
+[9.129s] -- Looking for libdl - found
+[9.179s] -- Searching for <gz-common5> component [graphics]
+[9.179s] -- Searching for <gz-common5> component [events]
+[9.180s] -- Searching for <gz-common5> component [geospatial]
+[9.189s] -- Looking for gz-common5-geospatial -- found version 5.7.1
+[9.189s] -- Searching for dependencies of gz-common5-geospatial
+[9.191s] -- Looking for gz-math7 -- found version 7.5.1
+[9.192s] -- Looking for gz-common5 -- found version 5.7.1
+[9.199s] -- Looking for gz-plugin2 -- found version 2.0.4
+[9.200s] -- Searching for dependencies of gz-plugin2
+[9.201s] -- Looking for gz-utils2 -- found version 2.2.1
+[9.201s] -- Searching for <gz-plugin2> component [all]
+[9.211s] -- Looking for all libraries of gz-plugin2 -- found version 2.0.4
+[9.215s] -- Looking for gz-plugin2 -- found version 2.0.4
+[9.220s] -- Looking for gz-utils2 -- found version 2.2.1
+[9.245s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL 
+[9.258s] -- Looking for gz-msgs10 -- found version 10.3.2
+[9.816s] -- Looking for gz-physics7 -- found version 7.5.0
+[9.822s] -- Searching for dependencies of gz-physics7
+[9.824s] -- Looking for gz-common5 -- found version 5.7.1
+[9.825s] -- Looking for gz-math7 -- found version 7.5.1
+[9.826s] -- Looking for gz-plugin2 -- found version 2.0.4
+[9.827s] -- Looking for gz-utils2 -- found version 2.2.1
+[9.837s] -- Searching for <gz-physics7> component [heightmap]
+[9.843s] -- Looking for gz-physics7-heightmap -- found version 7.5.0
+[9.844s] -- Searching for dependencies of gz-physics7-heightmap
+[9.845s] -- Looking for gz-common5 -- found version 5.7.1
+[9.849s] -- Searching for <gz-physics7> component [mesh]
+[9.878s] -- Looking for gz-physics7-mesh -- found version 7.5.0
+[9.879s] -- Searching for dependencies of gz-physics7-mesh
+[9.881s] -- Looking for gz-common5 -- found version 5.7.1
+[9.883s] -- Searching for <gz-physics7> component [sdf]
+[9.895s] -- Looking for gz-physics7-sdf -- found version 7.5.0
+[9.895s] -- Searching for dependencies of gz-physics7-sdf
+[9.896s] -- Looking for sdformat14 -- found version 14.8.0
+[9.978s] -- Looking for gz-sensors8 -- found version 8.2.2
+[9.985s] -- Searching for dependencies of gz-sensors8
+[10.043s] -- Looking for gz-math7 -- found version 7.5.1
+[10.043s] -- Looking for gz-common5 -- found version 5.7.1
+[10.044s] -- Looking for gz-transport13 -- found version 13.4.1
+[10.045s] -- Looking for gz-rendering8 -- found version 8.2.2
+[10.045s] -- Looking for gz-msgs10 -- found version 10.3.2
+[10.046s] -- Looking for sdformat14 -- found version 14.8.0
+[10.054s] -- Searching for <gz-sensors8> component [air_pressure]
+[10.072s] -- Looking for gz-sensors8-air_pressure -- found version 8.2.2
+[10.072s] -- Searching for dependencies of gz-sensors8-air_pressure
+[10.084s] -- Searching for <gz-sensors8> component [air_speed]
+[10.098s] -- Looking for gz-sensors8-air_speed -- found version 8.2.2
+[10.105s] -- Searching for dependencies of gz-sensors8-air_speed
+[10.132s] -- Searching for <gz-sensors8> component [altimeter]
+[10.151s] -- Looking for gz-sensors8-altimeter -- found version 8.2.2
+[10.153s] -- Searching for dependencies of gz-sensors8-altimeter
+[10.185s] -- Searching for <gz-sensors8> component [imu]
+[10.190s] -- Looking for gz-sensors8-imu -- found version 8.2.2
+[10.191s] -- Searching for dependencies of gz-sensors8-imu
+[10.193s] -- Searching for <gz-sensors8> component [force_torque]
+[10.216s] -- Looking for gz-sensors8-force_torque -- found version 8.2.2
+[10.218s] -- Searching for dependencies of gz-sensors8-force_torque
+[10.233s] -- Searching for <gz-sensors8> component [logical_camera]
+[10.242s] -- Looking for gz-sensors8-logical_camera -- found version 8.2.2
+[10.252s] -- Searching for dependencies of gz-sensors8-logical_camera
+[10.294s] -- Searching for <gz-sensors8> component [magnetometer]
+[10.304s] -- Looking for gz-sensors8-magnetometer -- found version 8.2.2
+[10.305s] -- Searching for dependencies of gz-sensors8-magnetometer
+[10.305s] -- Searching for <gz-sensors8> component [navsat]
+[10.339s] -- Looking for gz-sensors8-navsat -- found version 8.2.2
+[10.365s] -- Searching for dependencies of gz-sensors8-navsat
+[10.385s] -- Searching for <gz-sensors8> component [dvl]
+[10.410s] -- Looking for gz-sensors8-dvl -- found version 8.2.2
+[10.411s] -- Searching for dependencies of gz-sensors8-dvl
+[10.412s] -- Looking for gz-sensors8 -- found version 8.2.2
+[10.413s] -- Searching for dependencies of gz-sensors8
+[10.536s] -- Looking for gz-math7 -- found version 7.5.1
+[10.536s] -- Looking for gz-common5 -- found version 5.7.1
+[10.537s] -- Looking for gz-transport13 -- found version 13.4.1
+[10.538s] -- Looking for gz-rendering8 -- found version 8.2.2
+[10.540s] -- Looking for gz-msgs10 -- found version 10.3.2
+[10.540s] -- Looking for sdformat14 -- found version 14.8.0
+[10.541s] -- Searching for <gz-sensors8> component [rendering]
+[10.553s] -- Looking for gz-sensors8-rendering -- found version 8.2.2
+[10.553s] -- Searching for dependencies of gz-sensors8-rendering
+[10.567s] -- Searching for <gz-sensors8> component [rendering]
+[10.568s] -- Searching for <gz-sensors8> component [lidar]
+[10.613s] -- Looking for gz-sensors8-lidar -- found version 8.2.2
+[10.614s] -- Searching for dependencies of gz-sensors8-lidar
+[10.621s] -- Looking for gz-sensors8 -- found version 8.2.2
+[10.641s] -- Searching for <gz-sensors8> component [gpu_lidar]
+[10.693s] -- Looking for gz-sensors8-gpu_lidar -- found version 8.2.2
+[10.694s] -- Searching for dependencies of gz-sensors8-gpu_lidar
+[10.700s] -- Looking for gz-sensors8 -- found version 8.2.2
+[10.703s] -- Searching for <gz-sensors8> component [camera]
+[10.750s] -- Looking for gz-sensors8-camera -- found version 8.2.2
+[10.763s] -- Searching for dependencies of gz-sensors8-camera
+[10.763s] -- Looking for gz-sensors8 -- found version 8.2.2
+[10.773s] -- Searching for <gz-sensors8> component [boundingbox_camera]
+[10.827s] -- Looking for gz-sensors8-boundingbox_camera -- found version 8.2.2
+[10.827s] -- Searching for dependencies of gz-sensors8-boundingbox_camera
+[10.872s] -- Searching for <gz-sensors8> component [segmentation_camera]
+[10.880s] -- Looking for gz-sensors8-segmentation_camera -- found version 8.2.2
+[10.880s] -- Searching for dependencies of gz-sensors8-segmentation_camera
+[10.889s] -- Searching for <gz-sensors8> component [depth_camera]
+[10.895s] -- Looking for gz-sensors8-depth_camera -- found version 8.2.2
+[10.896s] -- Searching for dependencies of gz-sensors8-depth_camera
+[10.897s] -- Looking for gz-sensors8 -- found version 8.2.2
+[10.902s] -- Searching for <gz-sensors8> component [rgbd_camera]
+[10.909s] -- Looking for gz-sensors8-rgbd_camera -- found version 8.2.2
+[10.911s] -- Searching for dependencies of gz-sensors8-rgbd_camera
+[10.911s] -- Looking for gz-sensors8 -- found version 8.2.2
+[10.923s] -- Searching for <gz-sensors8> component [thermal_camera]
+[10.930s] -- Looking for gz-sensors8-thermal_camera -- found version 8.2.2
+[10.930s] -- Searching for dependencies of gz-sensors8-thermal_camera
+[10.932s] -- Looking for gz-sensors8 -- found version 8.2.2
+[10.940s] -- Searching for <gz-sensors8> component [wide_angle_camera]
+[10.942s] -- Looking for gz-sensors8-wide_angle_camera -- found version 8.2.2
+[10.944s] -- Searching for dependencies of gz-sensors8-wide_angle_camera
+[10.955s] -- Looking for gz-rendering8 -- found version 8.2.2
+[10.957s] -- Looking for gz-math7 -- found version 7.5.1
+[10.962s] -- Looking for gz-utils2 -- found version 2.2.1
+[11.041s] -- Compiling against Gazebo Harmonic
+[11.043s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[11.168s] -- Configuring done
+[11.170s] -- Generating done
+[11.176s] -- Build files have been written to: /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo
+[11.211s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo' returned '0': AMENT_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models /usr/bin/cmake /home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_gazebo -DCMAKE_INSTALL_PREFIX=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo
+[11.229s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo': AMENT_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo -- -j4 -l4
+[11.422s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo' returned '0': AMENT_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo -- -j4 -l4
+[11.423s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo': AMENT_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo
+[11.465s] -- Install configuration: ""
+[11.466s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/worlds
+[11.474s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/worlds/race_track.world
+[11.479s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/environment/line_tracking_race_gazebo.dsv
+[11.500s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/environment/line_tracking_race_gazebo.sh
+[11.500s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/ament_index/resource_index/package_run_dependencies/line_tracking_race_gazebo
+[11.501s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/ament_index/resource_index/parent_prefix_path/line_tracking_race_gazebo
+[11.501s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/environment/ament_prefix_path.sh
+[11.502s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/environment/ament_prefix_path.dsv
+[11.502s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/environment/path.sh
+[11.502s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/environment/path.dsv
+[11.503s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/local_setup.bash
+[11.503s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/local_setup.sh
+[11.503s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/local_setup.zsh
+[11.503s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/local_setup.dsv
+[11.503s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.dsv
+[11.503s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/ament_index/resource_index/packages/line_tracking_race_gazebo
+[11.505s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/cmake/line_tracking_race_gazeboConfig.cmake
+[11.506s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/cmake/line_tracking_race_gazeboConfig-version.cmake
+[11.506s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.xml
+[11.507s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo' returned '0': AMENT_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo

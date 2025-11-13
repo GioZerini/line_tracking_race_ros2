@@ -1,0 +1,389 @@
+[2.548s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[2.549s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=6, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7334cf4a5690>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7334cf50ba90>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7334cf50ba90>>)
+[2.767s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.767s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.767s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.767s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.767s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.767s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.767s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/brairlab/Desktop/line_tracking_race_ros2'
+[2.767s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.768s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.820s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[2.820s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.820s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.820s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.820s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.820s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.820s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.821s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.824s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ignore', 'ignore_ament_install']
+[2.825s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore'
+[2.825s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore_ament_install'
+[2.826s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_pkg']
+[2.826s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_pkg'
+[2.826s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_meta']
+[2.826s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_meta'
+[2.826s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ros']
+[2.826s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ros'
+[2.827s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['cmake', 'python']
+[2.827s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'cmake'
+[2.828s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python'
+[2.828s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['python_setup_py']
+[2.828s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python_setup_py'
+[2.832s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extensions ['ignore', 'ignore_ament_install']
+[2.832s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'ignore'
+[2.832s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'ignore_ament_install'
+[2.832s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extensions ['colcon_pkg']
+[2.832s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'colcon_pkg'
+[2.832s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extensions ['colcon_meta']
+[2.832s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'colcon_meta'
+[2.833s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extensions ['ros']
+[2.833s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'ros'
+[2.833s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extensions ['cmake', 'python']
+[2.833s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'cmake'
+[2.833s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'python'
+[2.833s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extensions ['python_setup_py']
+[2.833s] Level 1:colcon.colcon_core.package_identification:_identify(docs/figures) by extension 'python_setup_py'
+[2.834s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.834s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.834s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.845s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extensions ['ignore', 'ignore_ament_install']
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extension 'ignore'
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extension 'ignore_ament_install'
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extensions ['colcon_pkg']
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extension 'colcon_pkg'
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extensions ['colcon_meta']
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extension 'colcon_meta'
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extensions ['ros']
+[2.846s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_application) by extension 'ros'
+[2.861s] DEBUG:colcon.colcon_core.package_identification:Package 'line_tracking_race_application' with type 'ros.ament_cmake' and name 'line_tracking_race_application'
+[2.862s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extensions ['ignore', 'ignore_ament_install']
+[2.862s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extension 'ignore'
+[2.862s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extension 'ignore_ament_install'
+[2.863s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extensions ['colcon_pkg']
+[2.863s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extension 'colcon_pkg'
+[2.863s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extensions ['colcon_meta']
+[2.863s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extension 'colcon_meta'
+[2.863s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extensions ['ros']
+[2.863s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_bringup) by extension 'ros'
+[2.868s] DEBUG:colcon.colcon_core.package_identification:Package 'line_tracking_race_bringup' with type 'ros.ament_cmake' and name 'line_tracking_race_bringup'
+[2.869s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extensions ['ignore', 'ignore_ament_install']
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extension 'ignore'
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extension 'ignore_ament_install'
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extensions ['colcon_pkg']
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extension 'colcon_pkg'
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extensions ['colcon_meta']
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extension 'colcon_meta'
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extensions ['ros']
+[2.870s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_controller) by extension 'ros'
+[2.873s] DEBUG:colcon.colcon_core.package_identification:Package 'line_tracking_race_controller' with type 'ros.ament_python' and name 'line_tracking_race_controller'
+[2.876s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extensions ['ignore', 'ignore_ament_install']
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extension 'ignore'
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extension 'ignore_ament_install'
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extensions ['colcon_pkg']
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extension 'colcon_pkg'
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extensions ['colcon_meta']
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extension 'colcon_meta'
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extensions ['ros']
+[2.877s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_description) by extension 'ros'
+[2.881s] DEBUG:colcon.colcon_core.package_identification:Package 'line_tracking_race_description' with type 'ros.ament_cmake' and name 'line_tracking_race_description'
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extension 'ignore'
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extension 'ignore_ament_install'
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extensions ['colcon_pkg']
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extension 'colcon_pkg'
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extensions ['colcon_meta']
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extension 'colcon_meta'
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extensions ['ros']
+[2.882s] Level 1:colcon.colcon_core.package_identification:_identify(line_tracking_race_gazebo) by extension 'ros'
+[2.885s] DEBUG:colcon.colcon_core.package_identification:Package 'line_tracking_race_gazebo' with type 'ros.ament_cmake' and name 'line_tracking_race_gazebo'
+[2.885s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.885s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.885s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.885s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.885s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.885s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.885s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.885s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.053s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[3.053s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[3.071s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/brairlab/Desktop/line_tracking_race_ros2/install
+[3.073s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 293 installed packages in /opt/ros/humble
+[3.076s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'cmake_args' from command line to 'None'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'cmake_target' from command line to 'None'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'cmake_clean_cache' from command line to 'False'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'cmake_clean_first' from command line to 'False'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'cmake_force_configure' from command line to 'False'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'ament_cmake_args' from command line to 'None'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'catkin_cmake_args' from command line to 'None'
+[3.259s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_application' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.260s] DEBUG:colcon.colcon_core.verb:Building package 'line_tracking_race_application' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application', 'merge_install': False, 'path': '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_application', 'symlink_install': False, 'test_result_base': None}
+[3.261s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'cmake_args' from command line to 'None'
+[3.261s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'cmake_target' from command line to 'None'
+[3.261s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.261s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[3.261s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'cmake_clean_first' from command line to 'False'
+[3.262s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'cmake_force_configure' from command line to 'False'
+[3.262s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'ament_cmake_args' from command line to 'None'
+[3.262s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[3.262s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.262s] DEBUG:colcon.colcon_core.verb:Building package 'line_tracking_race_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller', 'merge_install': False, 'path': '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_controller', 'symlink_install': False, 'test_result_base': None}
+[3.264s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'cmake_args' from command line to 'None'
+[3.264s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'cmake_target' from command line to 'None'
+[3.265s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.265s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'cmake_clean_cache' from command line to 'False'
+[3.265s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'cmake_clean_first' from command line to 'False'
+[3.265s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'cmake_force_configure' from command line to 'False'
+[3.265s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'ament_cmake_args' from command line to 'None'
+[3.265s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'catkin_cmake_args' from command line to 'None'
+[3.265s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.265s] DEBUG:colcon.colcon_core.verb:Building package 'line_tracking_race_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description', 'merge_install': False, 'path': '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_description', 'symlink_install': False, 'test_result_base': None}
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'cmake_args' from command line to 'None'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'cmake_target' from command line to 'None'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[3.267s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.267s] DEBUG:colcon.colcon_core.verb:Building package 'line_tracking_race_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo', 'merge_install': False, 'path': '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_gazebo', 'symlink_install': False, 'test_result_base': None}
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'cmake_args' from command line to 'None'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'cmake_target' from command line to 'None'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[3.268s] Level 5:colcon.colcon_core.verb:set package 'line_tracking_race_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.268s] DEBUG:colcon.colcon_core.verb:Building package 'line_tracking_race_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup', 'merge_install': False, 'path': '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_bringup', 'symlink_install': False, 'test_result_base': None}
+[3.268s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[3.270s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[3.271s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_description' with build type 'ament_cmake'
+[3.271s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_description'
+[3.312s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.313s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.313s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.350s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_application' with build type 'ament_cmake'
+[3.350s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_application'
+[3.351s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.352s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.390s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_controller' with build type 'ament_python'
+[3.394s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_controller', 'ament_prefix_path')
+[3.394s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/hook/ament_prefix_path.ps1'
+[3.398s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/hook/ament_prefix_path.dsv'
+[3.400s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/hook/ament_prefix_path.sh'
+[3.404s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.404s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.437s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description -- -j6 -l6
+[3.469s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application -- -j6 -l6
+[4.078s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_controller'
+[4.079s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.079s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.101s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application -- -j6 -l6
+[4.107s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description -- -j6 -l6
+[4.220s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description
+[4.239s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application
+[4.280s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_application)
+[4.287s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application
+[4.322s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application' for CMake module files
+[4.322s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application' for CMake config files
+[4.322s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_application', 'cmake_prefix_path')
+[4.323s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/hook/cmake_prefix_path.ps1'
+[4.325s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/hook/cmake_prefix_path.dsv'
+[4.326s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/hook/cmake_prefix_path.sh'
+[4.327s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/bin'
+[4.327s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/lib/pkgconfig/line_tracking_race_application.pc'
+[4.327s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/lib/python3.10/site-packages'
+[4.327s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/bin'
+[4.328s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.ps1'
+[4.334s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.dsv'
+[4.337s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.sh'
+[4.340s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.bash'
+[4.344s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.zsh'
+[4.349s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/colcon-core/packages/line_tracking_race_application)
+[4.357s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_description)
+[4.358s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description' for CMake module files
+[4.359s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description
+[4.360s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description' for CMake config files
+[4.361s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_description', 'cmake_prefix_path')
+[4.363s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/hook/cmake_prefix_path.ps1'
+[4.365s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/hook/cmake_prefix_path.dsv'
+[4.366s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/hook/cmake_prefix_path.sh'
+[4.367s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/bin'
+[4.367s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/lib/pkgconfig/line_tracking_race_description.pc'
+[4.367s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/lib/python3.10/site-packages'
+[4.367s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/bin'
+[4.368s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.ps1'
+[4.368s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.dsv'
+[4.370s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.sh'
+[4.376s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.bash'
+[4.378s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.zsh'
+[4.378s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/colcon-core/packages/line_tracking_race_description)
+[4.451s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_application)
+[4.452s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application' for CMake module files
+[4.452s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application' for CMake config files
+[4.453s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_application', 'cmake_prefix_path')
+[4.453s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/hook/cmake_prefix_path.ps1'
+[4.456s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/hook/cmake_prefix_path.dsv'
+[4.456s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/hook/cmake_prefix_path.sh'
+[4.458s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/bin'
+[4.458s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/lib/pkgconfig/line_tracking_race_application.pc'
+[4.458s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/lib/python3.10/site-packages'
+[4.458s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/bin'
+[4.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.ps1'
+[4.461s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.dsv'
+[4.462s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.sh'
+[4.463s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.bash'
+[4.464s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.zsh'
+[4.464s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/colcon-core/packages/line_tracking_race_application)
+[4.478s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_description)
+[4.479s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description' for CMake module files
+[4.479s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description' for CMake config files
+[4.479s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_description', 'cmake_prefix_path')
+[4.480s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/hook/cmake_prefix_path.ps1'
+[4.480s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/hook/cmake_prefix_path.dsv'
+[4.482s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/hook/cmake_prefix_path.sh'
+[4.483s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/bin'
+[4.483s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/lib/pkgconfig/line_tracking_race_description.pc'
+[4.483s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/lib/python3.10/site-packages'
+[4.483s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/bin'
+[4.485s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.ps1'
+[4.488s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.dsv'
+[4.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.sh'
+[4.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.bash'
+[4.491s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.zsh'
+[4.491s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/colcon-core/packages/line_tracking_race_description)
+[4.492s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_gazebo' with build type 'ament_cmake'
+[4.492s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_gazebo'
+[4.492s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.493s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.533s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo -- -j6 -l6
+[4.922s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo -- -j6 -l6
+[5.037s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo
+[5.119s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_controller': PYTHONPATH=/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/prefix_override:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/line_tracking_race_controller build --build-base /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/build install --record /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/install.log --single-version-externally-managed
+[5.122s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_gazebo)
+[5.123s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo' for CMake module files
+[5.124s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo' for CMake config files
+[5.124s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_gazebo', 'cmake_prefix_path')
+[5.125s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/hook/cmake_prefix_path.ps1'
+[5.126s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/hook/cmake_prefix_path.dsv'
+[5.127s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/hook/cmake_prefix_path.sh'
+[5.128s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/bin'
+[5.128s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/lib/pkgconfig/line_tracking_race_gazebo.pc'
+[5.129s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/lib/python3.10/site-packages'
+[5.129s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/bin'
+[5.130s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.ps1'
+[5.131s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.dsv'
+[5.132s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.sh'
+[5.133s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.bash'
+[5.134s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.zsh'
+[5.136s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/colcon-core/packages/line_tracking_race_gazebo)
+[5.143s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo' returned '0': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo
+[5.241s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_gazebo)
+[5.241s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo' for CMake module files
+[5.242s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo' for CMake config files
+[5.242s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_gazebo', 'cmake_prefix_path')
+[5.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/hook/cmake_prefix_path.ps1'
+[5.244s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/hook/cmake_prefix_path.dsv'
+[5.244s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/hook/cmake_prefix_path.sh'
+[5.245s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/bin'
+[5.245s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/lib/pkgconfig/line_tracking_race_gazebo.pc'
+[5.246s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/lib/python3.10/site-packages'
+[5.246s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/bin'
+[5.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.ps1'
+[5.248s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.dsv'
+[5.248s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.sh'
+[5.249s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.bash'
+[5.249s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/line_tracking_race_gazebo/package.zsh'
+[5.250s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo/share/colcon-core/packages/line_tracking_race_gazebo)
+[5.250s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_bringup' with build type 'ament_cmake'
+[5.251s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_bringup'
+[5.251s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.251s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.281s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup -- -j6 -l6
+[5.372s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup' returned '0': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup -- -j6 -l6
+[5.535s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup
+[5.578s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_bringup)
+[5.583s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup' for CMake module files
+[5.585s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup' for CMake config files
+[5.587s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup' returned '0': CMAKE_PREFIX_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_gazebo:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble GZ_SIM_RESOURCE_PATH=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models:${GZ_SIM_RESOURCE_PATH} /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_bringup
+[5.595s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_bringup', 'cmake_prefix_path')
+[5.596s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/hook/cmake_prefix_path.ps1'
+[5.597s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/hook/cmake_prefix_path.dsv'
+[5.597s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/hook/cmake_prefix_path.sh'
+[5.598s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/bin'
+[5.598s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/lib/pkgconfig/line_tracking_race_bringup.pc'
+[5.599s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/lib/python3.10/site-packages'
+[5.599s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/bin'
+[5.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.ps1'
+[5.600s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.dsv'
+[5.601s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.sh'
+[5.602s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.bash'
+[5.602s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.zsh'
+[5.603s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/colcon-core/packages/line_tracking_race_bringup)
+[5.725s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_bringup)
+[5.725s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup' for CMake module files
+[5.727s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup' for CMake config files
+[5.727s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_bringup', 'cmake_prefix_path')
+[5.728s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/hook/cmake_prefix_path.ps1'
+[5.729s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/hook/cmake_prefix_path.dsv'
+[5.729s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/hook/cmake_prefix_path.sh'
+[5.730s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/bin'
+[5.730s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/lib/pkgconfig/line_tracking_race_bringup.pc'
+[5.731s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/lib/python3.10/site-packages'
+[5.731s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/bin'
+[5.732s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.ps1'
+[5.734s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.dsv'
+[5.735s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.sh'
+[5.736s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.bash'
+[5.737s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/line_tracking_race_bringup/package.zsh'
+[5.738s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_bringup/share/colcon-core/packages/line_tracking_race_bringup)
+[5.746s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller' for CMake module files
+[5.749s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_controller' returned '0': PYTHONPATH=/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/prefix_override:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/line_tracking_race_controller build --build-base /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/build install --record /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/install.log --single-version-externally-managed
+[5.750s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller' for CMake config files
+[5.755s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib'
+[5.756s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/bin'
+[5.756s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/pkgconfig/line_tracking_race_controller.pc'
+[5.756s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages'
+[5.756s] Level 1:colcon.colcon_core.shell:create_environment_hook('line_tracking_race_controller', 'pythonpath')
+[5.757s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/hook/pythonpath.ps1'
+[5.758s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/hook/pythonpath.dsv'
+[5.758s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/hook/pythonpath.sh'
+[5.759s] Level 1:colcon.colcon_core.environment:checking '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/bin'
+[5.759s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(line_tracking_race_controller)
+[5.760s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/package.ps1'
+[5.760s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/package.dsv'
+[5.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/package.sh'
+[5.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/package.bash'
+[5.762s] INFO:colcon.colcon_core.shell:Creating package script '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/line_tracking_race_controller/package.zsh'
+[5.762s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/share/colcon-core/packages/line_tracking_race_controller)
+[5.763s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.763s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.763s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.769s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.796s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.797s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.797s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.864s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.866s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brairlab/Desktop/line_tracking_race_ros2/install/local_setup.ps1'
+[5.869s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/brairlab/Desktop/line_tracking_race_ros2/install/_local_setup_util_ps1.py'
+[5.878s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brairlab/Desktop/line_tracking_race_ros2/install/setup.ps1'
+[5.884s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brairlab/Desktop/line_tracking_race_ros2/install/local_setup.sh'
+[5.889s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/brairlab/Desktop/line_tracking_race_ros2/install/_local_setup_util_sh.py'
+[5.890s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brairlab/Desktop/line_tracking_race_ros2/install/setup.sh'
+[5.910s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brairlab/Desktop/line_tracking_race_ros2/install/local_setup.bash'
+[5.913s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brairlab/Desktop/line_tracking_race_ros2/install/setup.bash'
+[5.919s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brairlab/Desktop/line_tracking_race_ros2/install/local_setup.zsh'
+[5.922s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brairlab/Desktop/line_tracking_race_ros2/install/setup.zsh'

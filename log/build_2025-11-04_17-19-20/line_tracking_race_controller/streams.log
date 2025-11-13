@@ -1,0 +1,32 @@
+[2.114s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_controller': PYTHONPATH=/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/prefix_override:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/line_tracking_race_controller build --build-base /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/build install --record /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/install.log --single-version-externally-managed
+[2.743s] running egg_info
+[2.751s] writing ../build/line_tracking_race_controller/line_tracking_race_controller.egg-info/PKG-INFO
+[2.762s] writing dependency_links to ../build/line_tracking_race_controller/line_tracking_race_controller.egg-info/dependency_links.txt
+[2.767s] writing entry points to ../build/line_tracking_race_controller/line_tracking_race_controller.egg-info/entry_points.txt
+[2.771s] writing requirements to ../build/line_tracking_race_controller/line_tracking_race_controller.egg-info/requires.txt
+[2.773s] writing top-level names to ../build/line_tracking_race_controller/line_tracking_race_controller.egg-info/top_level.txt
+[2.776s] reading manifest file '../build/line_tracking_race_controller/line_tracking_race_controller.egg-info/SOURCES.txt'
+[2.781s] writing manifest file '../build/line_tracking_race_controller/line_tracking_race_controller.egg-info/SOURCES.txt'
+[2.781s] running build
+[2.782s] running build_py
+[2.782s] copying line_tracking_race_controller/nonlinear_strategy.py -> /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/build/lib/line_tracking_race_controller
+[2.786s] running install
+[2.788s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.788s]   warnings.warn(
+[2.788s] running install_lib
+[2.792s] copying /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/build/lib/line_tracking_race_controller/nonlinear_strategy.py -> /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages/line_tracking_race_controller
+[2.796s] byte-compiling /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages/line_tracking_race_controller/nonlinear_strategy.py to nonlinear_strategy.cpython-310.pyc
+[2.816s] running install_data
+[2.817s] running install_egg_info
+[2.818s] removing '/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages/line_tracking_race_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[2.823s] Copying ../build/line_tracking_race_controller/line_tracking_race_controller.egg-info to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages/line_tracking_race_controller-0.0.0-py3.10.egg-info
+[2.829s] running install_scripts
+[2.899s] Installing control_node script to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/line_tracking_race_controller
+[2.911s] Installing control_node_nl script to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/line_tracking_race_controller
+[2.911s] Installing control_node_sel script to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/line_tracking_race_controller
+[2.911s] Installing planner_node script to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/line_tracking_race_controller
+[2.912s] Installing planner_node_nl script to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/line_tracking_race_controller
+[2.912s] Installing planner_node_sel script to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/line_tracking_race_controller
+[2.913s] Installing visualizer script to /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/line_tracking_race_controller
+[2.914s] writing list of installed files to '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/install.log'
+[3.054s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_controller' returned '0': PYTHONPATH=/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/prefix_override:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/line_tracking_race_controller build --build-base /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/build install --record /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_controller/install.log --single-version-externally-managed

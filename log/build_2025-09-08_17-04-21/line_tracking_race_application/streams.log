@@ -1,0 +1,39 @@
+[0.140s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_application -DCMAKE_INSTALL_PREFIX=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application
+[1.456s] -- The C compiler identification is GNU 11.4.0
+[2.121s] -- The CXX compiler identification is GNU 11.4.0
+[2.250s] -- Detecting C compiler ABI info
+[2.585s] -- Detecting C compiler ABI info - done
+[2.595s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.595s] -- Detecting C compile features
+[2.596s] -- Detecting C compile features - done
+[2.600s] -- Detecting CXX compiler ABI info
+[3.089s] -- Detecting CXX compiler ABI info - done
+[3.096s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.097s] -- Detecting CXX compile features
+[3.098s] -- Detecting CXX compile features - done
+[3.112s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[3.629s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[4.400s] -- Configuring done
+[4.408s] -- Generating done
+[4.410s] -- Build files have been written to: /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application
+[4.420s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/brairlab/Desktop/line_tracking_race_ros2/line_tracking_race_application -DCMAKE_INSTALL_PREFIX=/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application
+[4.420s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application -- -j4 -l4
+[4.785s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application -- -j4 -l4
+[4.865s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application
+[4.930s] -- Install configuration: ""
+[4.950s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/ament_index/resource_index/package_run_dependencies/line_tracking_race_application
+[4.950s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/ament_index/resource_index/parent_prefix_path/line_tracking_race_application
+[4.950s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/environment/ament_prefix_path.sh
+[4.950s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/environment/ament_prefix_path.dsv
+[4.950s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/environment/path.sh
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/environment/path.dsv
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/local_setup.bash
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/local_setup.sh
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/local_setup.zsh
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/local_setup.dsv
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.dsv
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/ament_index/resource_index/packages/line_tracking_race_application
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/cmake/line_tracking_race_applicationConfig.cmake
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/cmake/line_tracking_race_applicationConfig-version.cmake
+[4.951s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_application/share/line_tracking_race_application/package.xml
+[4.952s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_application

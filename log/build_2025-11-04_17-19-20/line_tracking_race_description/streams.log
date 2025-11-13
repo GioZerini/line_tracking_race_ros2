@@ -1,0 +1,42 @@
+[0.238s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description -- -j6 -l6
+[0.953s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --build /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description -- -j6 -l6
+[1.128s] Invoking command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description
+[1.174s] -- Install configuration: ""
+[1.179s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models/
+[1.183s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track
+[1.183s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track/materials
+[1.184s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track/materials/textures
+[1.193s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track/materials/textures/track_loop.png
+[1.194s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track/materials/textures/trackCurve.png
+[1.194s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track/model.config
+[1.216s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track/track.sdf
+[1.216s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//line_track/hard_track.sdf
+[1.218s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf
+[1.218s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car.urdf.xacro
+[1.218s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_gazebo_control.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_properties.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_camera.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_wheel_macro.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_ros2_control.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_core.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_inertial.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/models//urdf/car/car_materials.xacro
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/environment/line_tracking_race_description.dsv
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/environment/line_tracking_race_description.sh
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/ament_index/resource_index/package_run_dependencies/line_tracking_race_description
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/ament_index/resource_index/parent_prefix_path/line_tracking_race_description
+[1.219s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/environment/ament_prefix_path.sh
+[1.222s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/environment/ament_prefix_path.dsv
+[1.222s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/environment/path.sh
+[1.227s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/environment/path.dsv
+[1.227s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/local_setup.bash
+[1.227s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/local_setup.sh
+[1.227s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/local_setup.zsh
+[1.228s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/local_setup.dsv
+[1.228s] -- Installing: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.dsv
+[1.228s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/ament_index/resource_index/packages/line_tracking_race_description
+[1.228s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/cmake/line_tracking_race_descriptionConfig.cmake
+[1.228s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/cmake/line_tracking_race_descriptionConfig-version.cmake
+[1.228s] -- Up-to-date: /home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_description/share/line_tracking_race_description/package.xml
+[1.245s] Invoked command in '/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brairlab/Desktop/line_tracking_race_ros2/install/line_tracking_race_controller:/opt/ros/humble /usr/bin/cmake --install /home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_description
