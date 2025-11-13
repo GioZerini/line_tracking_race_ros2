@@ -33,3 +33,6 @@
 
 # WSL Stuff
 *:Zone.Identifier
+build/
+install/
+log/

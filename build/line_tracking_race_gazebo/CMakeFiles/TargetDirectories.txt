@@ -1,9 +1,0 @@
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/uninstall.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/line_tracking_race_gazebo_uninstall.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/test.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/edit_cache.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/rebuild_cache.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/list_install_components.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/install.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/install/local.dir
-/home/brairlab/Desktop/line_tracking_race_ros2/build/line_tracking_race_gazebo/CMakeFiles/install/strip.dir
