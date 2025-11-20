@@ -26,9 +26,9 @@ class ControlNodeNl(Node):
 
         # Useful parameters
         self.declare_parameter("duration", -1)
-        self.declare_parameter("k_psi", 0.8)
-        self.declare_parameter("k_dis", 0.45)
-        self.declare_parameter("k_gamma", 0.15)
+        self.declare_parameter("k_psi", 0.3)
+        self.declare_parameter("k_dis", 0.15)
+        self.declare_parameter("k_gamma", 0.45)
         self.declare_parameter("eps_div", 1e-3)
 
         self.max_duration = float(self.get_parameter("duration").value)

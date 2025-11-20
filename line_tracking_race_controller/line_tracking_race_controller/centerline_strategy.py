@@ -16,7 +16,7 @@ LOWER_YELLOW = (20, 50, 50)
 UPPER_YELLOW = (30, 255, 255)
 
 class CenterlineStrategy:
-    def __init__(self, error_type, should_visualize, node):
+    def __init__(self, node, error_type, should_visualize):
         self.error_type = error_type
         self.node = node  # ROS2 node per logging
 

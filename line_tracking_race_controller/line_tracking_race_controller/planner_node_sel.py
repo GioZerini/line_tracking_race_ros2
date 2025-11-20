@@ -32,7 +32,7 @@ class PlannerNode_sel(Node):
         self.declare_parameter("error_type", "offset")
         self.declare_parameter("viz", False)
         self.declare_parameter("strategy", "centroid")
-        self.declare_parameter("turn_choice", "straight")  # left|right|straight|alternate
+        self.declare_parameter("turn_choice", "right")  # left|right|straight|alternate
         self.declare_parameter("turn_error_sign", -1.0) 
         self.declare_parameter("v_follow", 0.35)
         self.declare_parameter("v_enter",  0.12)
@@ -144,16 +144,13 @@ class PlannerNode_sel(Node):
             # If there is an intersection, we turn in the desidered direction
             if self.enter_cnt >= self.N_enter:
                 self.state = "ENTER_X"
-                self._publish_speed(self.v_enter)
                 self.set_turn_dir()
                 self.enter_cnt = 0
                 self.get_logger().info("FSM: FOLLOW -> ENTER_X")
             else:
-                self._publish_speed(self.v_follow)
                 self.publish_error(err)
 
         elif self.state == "ENTER_X":
-            self._publish_speed(self.v_enter)
             self.publish_error(0.0)  
             self.exit_cnt += 1
 
@@ -166,18 +163,13 @@ class PlannerNode_sel(Node):
                 self.pid_reset_pub.publish(Bool(data=True))
 
         elif self.state == "TURNING":
-            self._publish_speed(self.v_turn)
-
             # If the robot has to go straight, it doesn't turn
             if self.turn_dir == 0:
                 err_follow = self.line_error(msg)
-                if abs(err_follow) < 0.08:
-                    err_turn = 0.0
-                else:
-                    err_turn = 0.6 * err_follow  
+                err_turn = 0.0 
             else:
                 # Else the robot turns in the desidered direction
-                # turn_dir: +1 = left, -1 = right
+                # turn_dir: +1 = right, -1 = left
                 TURN_GAIN = 0.8
                 err_turn = TURN_GAIN * self.turn_error_sign * (1.0 if self.turn_dir > 0 else -1.0)
 
@@ -197,9 +189,6 @@ class PlannerNode_sel(Node):
                 self.state = "FOLLOW"
                 self.straight_ok_cnt = 0
                 self.get_logger().info("FSM: TURNING -> FOLLOW")
-
-        # Publish the actual state
-        self.state_pub.publish(String(data=self.state))
 
     def get_track(self, bgr_roi) -> np.ndarray:
         # Return the yellow mask 

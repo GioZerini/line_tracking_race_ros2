@@ -25,9 +25,9 @@ class ControlNode(Node):
 
         # Parameter declarations configurable via launch file
         self.declare_parameter("duration", -1)
-        self.declare_parameter("k_p", 1.0)
-        self.declare_parameter("k_i", 0.2)
-        self.declare_parameter("k_d", 0.2)
+        self.declare_parameter("k_p", 1.2)
+        self.declare_parameter("k_i", 0.1)
+        self.declare_parameter("k_d", 0.15)
 
         self.max_duration = self.get_parameter("duration").value
         self.k_p = self.get_parameter("k_p").value
